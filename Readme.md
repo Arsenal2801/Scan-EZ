@@ -6,7 +6,7 @@ Projects: Scan-EZ (https://www.notion.so/Scan-EZ-4d4916606fe348ea83246185702745a
 
 # Circuito
 
-![Untitled](Documentacio%CC%81n%20beb7f08375914e6c96781168be434438/Untitled.png)
+![Imagen del circuito](https://how2electronics.com/wp-content/uploads/2022/02/PN532-Arduino-SPI.jpg)
 
 ## Conexiones
 
@@ -51,7 +51,7 @@ void loop(void) {
   readNFC();
 }
 
- // Funcion para la carga de la tarjeta/chip 
+ // Funcion para la carga de la tarjeta/chip
 void readNFC() {
 		// Se valida que exista una tarjeta cerca del lector
   if (nfc.tagPresent()) {
@@ -65,13 +65,13 @@ void readNFC() {
     byte payloadLength = record.getPayloadLength();
     byte payload[payloadLength];
     record.getPayload(payload);
-			
+
 			// Transformacion de la carga para que sea legible en texto plano (no en binario)
     String payloadString = "";
     for (int i = 0; i < payloadLength; i++) {
       payloadString += (char)payload[i];
     }
-    
+
 			// Impresion de la informacion
     Serial.println(payloadString);
 
@@ -86,10 +86,9 @@ void readNFC() {
 ## Server
 
 > NOTA:
-Para el servidor se requiere hacer la instalación de “NodeJS” en la computadora que se corra el programa.
-> 
+> Para el servidor se requiere hacer la instalación de “NodeJS” en la computadora que se corra el programa.
 
-LINK DE DESCARGA: 
+LINK DE DESCARGA:
 
 [Download | Node.js](https://nodejs.org/en/download)
 
@@ -107,7 +106,7 @@ Para ejecutarlo tienes que estar en la carpeta del proyecto.
 cd .\Desktop\FeriaDeCiencias\
 ```
 
-![Untitled](Documentacio%CC%81n%20beb7f08375914e6c96781168be434438/Untitled%201.png)
+![Captura de pantalla](./public/console.png)
 
 Para abrirlo en el navegador escriba localhost:3000
 
@@ -156,9 +155,9 @@ port.on("open", () => {
 // Se lee la informacion del puerto serial
 parser.on("data", (data) => {
   try {
-		// Se imprime la informacion en formato JSON 
+    // Se imprime la informacion en formato JSON
     console.log(saveDataOnArray(data));
-		// Se envia la informacion al cliente
+    // Se envia la informacion al cliente
     io.emit("sendData", saveDataOnArray(data));
   } catch (error) {}
 });
