@@ -1,0 +1,64 @@
+/* Fuentes */
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Título */
+.m-10 {
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* Lista */
+.list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  justify-content: space-between;
+}
+
+.list li.card {
+  margin: auto;
+  margin-top: 5px;
+  max-width: 768px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  justify-content: space-evenly;
+  display: flex;
+  box-shadow: #000 0px 0px 2px;
+  border-radius: 10px;
+}
+
+.list li.card span {
+  margin: auto;
+  min-width: 256px;
+  text-align: center;
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.btn-floating {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: #502f4c;
+  color: #fff;
+  border-radius: 50%;
+}
+.btn-floating svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
